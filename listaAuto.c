@@ -1,23 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "imprimir.c"
+
+ #ifndef _LISTAAUTO_C
+ #define _LISTAAUTO_C 1
+
+// Auto es una lista circular doblemente ligada
 struct Auto {
     int tipo;
-    char nombre[20];
+    char *nombre;
 
     struct Auto *ptrAnterior;
     struct Auto *ptrSiguiente;
 };
 
 /* Prototipos */
-void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza);
+void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *nombre);
 void sacar(struct Auto **ptrTalon, struct Auto **ptrCabeza);
 void imprimirTalon(struct Auto *ptrTalon, struct Auto *ptrCabeza);
 void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza);
-void recorrerManualmete(struct Auto *ptr);
+void recorrerManualmete(struct Auto *ptr, int *tipo);
 void vaciarLista(struct Auto **ptrTalon, struct Auto **ptrCabeza);
 
-void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
+void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *cnombre) {
     system("clear");
     struct Auto *nuevo = (struct Auto *) malloc( sizeof(struct Auto) );
 
@@ -27,12 +33,9 @@ void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
         return;
     }
 
-    printf("| Registrar Auto |\n");
-    printf("Tipo de auto: ");
-    scanf("%d", &nuevo->tipo);
-    printf("Nombre del auto: ");
-    scanf("%d", nuevo->nombre);
-
+    nuevo->nombre = cnombre;
+    nuevo->tipo = tipo;
+    
     //Insertar primer elemento
     if(*ptrTalon == NULL && *ptrCabeza == NULL) {
         nuevo->ptrAnterior = nuevo;
@@ -203,24 +206,22 @@ void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza) {
     printf("\n\n");
 }
 
-void recorrerManualmete(struct Auto *ptr) {
+void recorrerManualmete(struct Auto *ptr, int *tipo) {
     system("clear");
     if(ptr != NULL) {
         int opcion;
 
         while(opcion != 3) {
             system("clear");
-            printf("\n\n\t%d\t%d\t%d\n",
-            ptr->ptrAnterior->tipo, ptr->tipo, ptr->ptrSiguiente->tipo);
-            printf("\t \t^\n\n");
+            imprimirAuto(ptr->tipo);
 
-            printf("1. Anterior    2. Siguiente    3. Terminar\n\t Opcion: ");
+            printf("1. Anterior    2. Siguiente    3. Seleccionar\n\t Opcion: ");
             scanf("%d", &opcion);
 
             switch(opcion) {
                 case 1: ptr = ptr->ptrAnterior; break;
                 case 2: ptr = ptr->ptrSiguiente; break;
-                case 3: break;
+                case 3: *tipo = ptr->tipo; break;
                 default: printf("Opcion no valida\n"); break;
             }
         }
@@ -249,3 +250,5 @@ void vaciarLista(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
         *ptrCabeza = NULL;
     }
 }
+
+#endif

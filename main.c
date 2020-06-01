@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include "imprimir.h"
+
+#include "usuario.c"
+#include "monedero.c"
 
 int main() {
-    int i;
+    struct Usuario usuario = crearUsuerioInicial();
 
-    for(i=1; i<=4; i++) {
-        imprimirAuto(i);
-    }
+    imprimirMonedero(usuario.monedero, usuario.noMondedas);
+    vaciarMonedero(&usuario.monedero, &usuario.noMondedas);
 
-    imprimirTitulo();
     return 0;
 }
