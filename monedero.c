@@ -88,6 +88,7 @@ void pop(struct Monedero **ptrS, int moneda, int *noMonedas) {
 }
 
 void imprimirMonedero(struct Monedero *ptrS, int noMonedas) {
+    printf("\n");
     if(ptrS == NULL) {
         printf("\nNo tienes monedas\n");
     } else {
@@ -114,6 +115,7 @@ void imprimirMonedero(struct Monedero *ptrS, int noMonedas) {
 }
 
 void vaciarMonedero(struct Monedero **ptrS, int *noMonedas) {
+    printf("Vaciando monedero...\n");
     struct Monedero *actual;
 
     while(*ptrS != NULL) {

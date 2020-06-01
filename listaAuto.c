@@ -20,11 +20,10 @@ void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *nomb
 void sacar(struct Auto **ptrTalon, struct Auto **ptrCabeza);
 void imprimirTalon(struct Auto *ptrTalon, struct Auto *ptrCabeza);
 void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza);
-void recorrerManualmete(struct Auto *ptr, int *tipo);
-void vaciarLista(struct Auto **ptrTalon, struct Auto **ptrCabeza);
+void recorrerAutosManualmete(struct Auto *ptr, int *tipo);
+void vaciarListaAutos(struct Auto **ptrTalon, struct Auto **ptrCabeza);
 
 void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *cnombre) {
-    system("clear");
     struct Auto *nuevo = (struct Auto *) malloc( sizeof(struct Auto) );
 
     //Si algo salio mal
@@ -102,7 +101,6 @@ void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *cnom
 }
 
 void sacar(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
-    system("clear");
     if(*ptrTalon != NULL) {
         int eliminar;
         printf(" | Eliminar dato |\n");
@@ -174,7 +172,6 @@ void sacar(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
 }
 
 void imprimirTalon(struct Auto *ptrTalon, struct Auto *ptrCabeza) {
-    system("clear");
     printf("\n\n| Imprimir desde talon |\n");
     if(ptrTalon == NULL) {
         printf("La lista esta vacia.\n\n");
@@ -190,7 +187,6 @@ void imprimirTalon(struct Auto *ptrTalon, struct Auto *ptrCabeza) {
 }
 
 void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza) {
-    system("clear");
     printf("\n\n| Imprimir desde Cabeza |\n");
     if(ptrTalon == NULL) {
         printf("La lista esta vacia.\n\n");
@@ -206,7 +202,7 @@ void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza) {
     printf("\n\n");
 }
 
-void recorrerManualmete(struct Auto *ptr, int *tipo) {
+void recorrerAutosManualmete(struct Auto *ptr, int *tipo) {
     system("clear");
     if(ptr != NULL) {
         int opcion;
@@ -230,8 +226,8 @@ void recorrerManualmete(struct Auto *ptr, int *tipo) {
     }
 } 
 
-void vaciarLista(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
-    printf("\nVaciando lista...\n");
+void vaciarListaAutos(struct Auto **ptrTalon, struct Auto **ptrCabeza) {
+    printf("Vaciando autos...\n");
 
     if(*ptrTalon != NULL) { 
         //Puntero para recorrer la lista

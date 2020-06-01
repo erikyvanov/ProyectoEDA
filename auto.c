@@ -15,12 +15,8 @@ struct PunterosAutos generarAutosBase();
 struct PunterosAutos generarAutosBase() {
     struct PunterosAutos base;
 
-    base.cabeza = (struct Auto *) malloc( sizeof(struct Auto) );
-    base.talon = (struct Auto *) malloc( sizeof(struct Auto) );
-
-    if(base.cabeza == NULL || base.talon == NULL) {
-        return base;
-    }
+    base.cabeza = NULL;
+    base.talon =  NULL;
 
     meter(&base.talon, &base.cabeza, 1, "Carro\0");
     meter(&base.talon, &base.cabeza, 2, "Camioneta\0");

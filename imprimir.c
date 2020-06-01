@@ -5,7 +5,7 @@
 
 /*Prototipos*/
 
-void imprimirTitulo();
+void imprimirTitulo(char *nombreAuto);
 
 void imprimirMoneda(int moneda, int renglon);
 
@@ -19,9 +19,11 @@ void imprimirCamion();
 
 /*Funciones*/
 
-void imprimirTitulo() {
+void imprimirTitulo(char *nombreAuto) {
     printf("\n                _               _____ \n     /\\        | |             / ____|\n    /  \\  _   _| |_ ___ ______| |     \n   / /\\ \\| | | | __/ _ \\______| |     \n  / ____ \\ |_| | || (_) |     | |____ \n /_/    \\_\\__,_|\\__\\___/       \\_____|\n");
-    printf("\n 1. Seleccionar veiculo\n 2. Ir a la cuidad\n 3. Intrucciones\n 4. Salir\n\n Opcion: ");
+    printf("\nAuto actual: %s\n", nombreAuto);
+
+    printf("\n 1. Seleccionar veiculo\n 2. Ir a la cuidad\n 3. Intrucciones\n 4. Ver monedero\n 5. Salir\n\n Opcion: ");
 }
 
 void imprimirMoneda(int moneda, int renglon) {
