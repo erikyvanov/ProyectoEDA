@@ -3,6 +3,7 @@
 #include "usuario.c"
 #include "auto.c"
 #include "imprimir.c"
+#include "listaAuto.c"
 
 int main() {
     struct Usuario usuario = crearUsuerioInicial();
@@ -10,13 +11,13 @@ int main() {
     int opcion = 0;
 
     while(opcion != 5) {
-        imprimirTitulo(usuario.nombreAuto);
+        imprimirTitulo(usuario.tipoAuto);
         scanf("%d", &opcion);
 
         switch(opcion) {
-            case 1: break;
+            case 1: recorrerAutosManualmete(autos.talon, &usuario.tipoAuto); break;
             case 2: break;
-            case 3: break;
+            case 3: imprimirInstrucciones(); break;
             case 4: imprimirMonedero(usuario.monedero, usuario.noMondedas); break;
             default: printf("\nOpcion invalida.\n");
         }

@@ -9,21 +9,20 @@
 // Auto es una lista circular doblemente ligada
 struct Auto {
     int tipo;
-    char *nombre;
 
     struct Auto *ptrAnterior;
     struct Auto *ptrSiguiente;
 };
 
 /* Prototipos */
-void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *nombre);
+void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo);
 void sacar(struct Auto **ptrTalon, struct Auto **ptrCabeza);
 void imprimirTalon(struct Auto *ptrTalon, struct Auto *ptrCabeza);
 void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza);
 void recorrerAutosManualmete(struct Auto *ptr, int *tipo);
 void vaciarListaAutos(struct Auto **ptrTalon, struct Auto **ptrCabeza);
 
-void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *cnombre) {
+void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo) {
     struct Auto *nuevo = (struct Auto *) malloc( sizeof(struct Auto) );
 
     //Si algo salio mal
@@ -32,7 +31,6 @@ void meter(struct Auto **ptrTalon, struct Auto **ptrCabeza, int tipo, char *cnom
         return;
     }
 
-    nuevo->nombre = cnombre;
     nuevo->tipo = tipo;
     
     //Insertar primer elemento
@@ -211,7 +209,7 @@ void recorrerAutosManualmete(struct Auto *ptr, int *tipo) {
             system("clear");
             imprimirAuto(ptr->tipo);
 
-            printf("1. Anterior    2. Siguiente    3. Seleccionar\n\t Opcion: ");
+            printf("\n1. Anterior    2. Siguiente    3. Seleccionar\n\t Opcion: ");
             scanf("%d", &opcion);
 
             switch(opcion) {

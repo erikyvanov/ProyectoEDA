@@ -18,10 +18,10 @@ struct PunterosAutos generarAutosBase() {
     base.cabeza = NULL;
     base.talon =  NULL;
 
-    meter(&base.talon, &base.cabeza, 1, "Carro\0");
-    meter(&base.talon, &base.cabeza, 2, "Camioneta\0");
-    meter(&base.talon, &base.cabeza, 3, "Autobus\0");
-    meter(&base.talon, &base.cabeza, 4, "Camion\0");
+    meter(&base.talon, &base.cabeza, 1);
+    meter(&base.talon, &base.cabeza, 2);
+    meter(&base.talon, &base.cabeza, 3);
+    meter(&base.talon, &base.cabeza, 4);
 
     return base;
 }

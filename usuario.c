@@ -7,7 +7,6 @@
 
 struct Usuario {
     int tipoAuto;
-    char *nombreAuto;
 
     struct Monedero *monedero;
     int noMondedas;
@@ -28,7 +27,6 @@ struct Usuario crearUsuerioInicial() {
     nuevo.monedero = monederoInicial(monedasIniciales, denominaciones, &nuevo.noMondedas);
 
     nuevo.tipoAuto = 0;
-    nuevo.nombreAuto = "Ninguno\0";
     return nuevo;
 }
 

@@ -5,12 +5,14 @@
 
 /*Prototipos*/
 
-void imprimirTitulo(char *nombreAuto);
+void imprimirTitulo(int tipoAuto);
+void imprimirInstrucciones();
 
 void imprimirMoneda(int moneda, int renglon);
 
 // Imprime un auto dependiendo del tipo
 void imprimirAuto(int tipo);
+void imprimirNombreAuto(int tipo);
 
 void imprimirCarro();
 void imprimirCamioneta();
@@ -19,11 +21,18 @@ void imprimirCamion();
 
 /*Funciones*/
 
-void imprimirTitulo(char *nombreAuto) {
+void imprimirTitulo(int tipoAuto) {
     printf("\n                _               _____ \n     /\\        | |             / ____|\n    /  \\  _   _| |_ ___ ______| |     \n   / /\\ \\| | | | __/ _ \\______| |     \n  / ____ \\ |_| | || (_) |     | |____ \n /_/    \\_\\__,_|\\__\\___/       \\_____|\n");
-    printf("\nAuto actual: %s\n", nombreAuto);
+    printf("\nAuto actual: ");
+    imprimirNombreAuto(tipoAuto);
 
-    printf("\n 1. Seleccionar veiculo\n 2. Ir a la cuidad\n 3. Intrucciones\n 4. Ver monedero\n 5. Salir\n\n Opcion: ");
+    printf("\n\n 1. Seleccionar veiculo\n 2. Ir a la cuidad\n 3. Intrucciones\n 4. Ver monedero\n 5. Salir\n\n Opcion: ");
+}
+void imprimirInstrucciones() {
+    printf("\n Instrucciones:\n\n");
+    printf("\t1. Tienes que seleccionar auto.\n");
+    printf("\t2. Despues ir a la cuidad.\n");
+    printf("\t3. Pagar el estacionamiento.\n\n");
 }
 
 void imprimirMoneda(int moneda, int renglon) {
@@ -49,11 +58,23 @@ void imprimirMoneda(int moneda, int renglon) {
 }
 
 void imprimirAuto(int tipo) {
+    printf("\t");
+    imprimirNombreAuto(tipo); 
     switch(tipo) {
         case 1: imprimirCarro(); break;
         case 2: imprimirCamioneta(); break;
         case 3: imprimirAutobus(); break;
         case 4: imprimirCamion(); break;
+    }
+}
+
+void imprimirNombreAuto(int tipo) {
+    switch(tipo) {
+        case 1: printf("Carro."); break;
+        case 2: printf("Camioneta."); break;
+        case 3: printf("Autobus."); break;
+        case 4: printf("Camion."); break;
+        default: printf("Ninguno");
     }
 }
 
