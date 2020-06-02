@@ -23,7 +23,7 @@ void irA(struct Usuario *u) {
                 if(opcion == 4) {
                     imprimirPreciosEstacionamiento();
                 } else {
-                    printf("Has realizado to actividad\n");
+                    printf("Has realizado tu actividad\n");
                     printf("Ahora toca pagar el estacionamiento\n");
 
                     cobrar(calcularPagoEstacionamiento(opcion, (*u).tipoAuto), u);

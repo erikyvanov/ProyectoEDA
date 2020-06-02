@@ -115,7 +115,7 @@ void imprimirCobrar(int cantidad, int pagado) {
 
 void imprimirMenuIrA() {
     printf("\n\nQue vas a hacer?\n");
-    printf(" 1. Comprar comida (1 hora)\n 2. Salir al parque (2 horas)\n 3. Ir al cine (3 hooras)\n 4. Ver precios del estacionamiento\n 5. Regresar\n");
+    printf(" 1. Comprar comida (1 hora)\n 2. Salir al parque (2 horas)\n 3. Ir al cine (3 horas)\n 4. Ver precios del estacionamiento\n 5. Regresar\n");
     printf("\nOpcion: ");
 }
 

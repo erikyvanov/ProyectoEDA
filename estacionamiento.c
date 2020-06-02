@@ -21,13 +21,13 @@ void cobrar(int cobrar, struct Usuario *u) {
 
     while(cobrar > pagado) {
         // si el usuario no tiene para pagar encontara dinero en el auto
-        if(&(*u).monedero == NULL) {
+        if((*u).monedero == NULL) {
             printf("Te has quedando sin dinero...\n");
             printf("Pero encontraste $10 en el auto\n");
 
             push(&(*u).monedero, 10, &(*u).noMondedas);
         }
-
+        
         imprimirCobrar(cobrar, pagado);
         printf("Tus monedas:");
         imprimirMonedero((*u).monedero, (*u).noMondedas);
