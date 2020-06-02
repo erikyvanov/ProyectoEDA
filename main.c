@@ -1,3 +1,12 @@
+/*
+    Autor: Dominguez Rivera Erik Ivanov
+    EDA I
+    Proyecto final
+
+    Compilado en Ubuntu 20.04 LTS
+    gcc (Ubuntu 9.3.0-10ubuntu2) 9.3.0
+*/
+
 #include <stdio.h>
 
 #include "usuario.c"
