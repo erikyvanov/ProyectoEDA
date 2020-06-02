@@ -21,7 +21,7 @@ struct Monedero * monederoInicial(int *monedas, int *denominaciones, int *noMone
 
 struct Usuario crearUsuerioInicial() {
     struct Usuario nuevo;
-    int monedasIniciales[4] = { 3, 0, 0, 0 };
+    int monedasIniciales[4] = { 3, 3, 3, 3 };
     int denominaciones[4] = { 1, 2, 5, 10 };
 
     nuevo.monedero = monederoInicial(monedasIniciales, denominaciones, &nuevo.noMondedas);
