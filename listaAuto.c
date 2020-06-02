@@ -206,6 +206,7 @@ void recorrerAutosManualmete(struct Auto *ptr, int *tipo) {
 
         while(opcion != 3) {
             system("clear");
+            printf("Selecciona tu veiculo\n\n");
             imprimirAuto(ptr->tipo);
 
             printf("\n1. Anterior    2. Siguiente    3. Seleccionar\n\t Opcion: ");

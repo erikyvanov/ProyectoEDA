@@ -21,6 +21,9 @@ void imprimirCamion();
 
 void imprimirCobrar(int cantidad, int pagado);
 
+void imprimirMenuIrA();
+void imprimirPreciosEstacionamiento();
+
 /*Funciones*/
 
 void imprimirTitulo(int tipoAuto) {
@@ -108,6 +111,21 @@ void imprimirCobrar(int cantidad, int pagado) {
     }
     printf("            |\n");
     printf(" |__________________________|\n\n");
+}
+
+void imprimirMenuIrA() {
+    printf("\n\nQue vas a hacer?\n");
+    printf(" 1. Comprar comida (1 hora)\n 2. Salir al parque (2 horas)\n 3. Ir al cine (3 hooras)\n 4. Ver precios del estacionamiento\n 5. Regresar\n");
+    printf("\nOpcion: ");
+}
+
+void imprimirPreciosEstacionamiento() {
+    printf(" _______________________\n");
+    printf("|                       |\n");
+    printf("| Autos $2 la hora      |\n");
+    printf("| Camionetas $4 la hora |\n");
+    printf("| Autobuses $6 la hora  |\n");
+    printf("|_______________________|\n");
 }
 
 #endif
