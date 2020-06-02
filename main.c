@@ -4,6 +4,7 @@
 #include "auto.c"
 #include "imprimir.c"
 #include "listaAuto.c"
+#include "estacionamiento.c"
 
 int main() {
     struct Usuario usuario = crearUsuerioInicial();
@@ -16,9 +17,10 @@ int main() {
 
         switch(opcion) {
             case 1: recorrerAutosManualmete(autos.talon, &usuario.tipoAuto); break;
-            case 2: break;
+            case 2: cobrar(10, &usuario); break;
             case 3: imprimirInstrucciones(); break;
             case 4: imprimirMonedero(usuario.monedero, usuario.noMondedas); break;
+            case 5: printf("\nSaliendo..\n"); break;
             default: printf("\nOpcion invalida.\n");
         }
     }

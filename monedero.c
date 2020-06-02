@@ -14,7 +14,8 @@ struct Monedero {
 };
 
 void push(struct Monedero **ptrS, int moneda, int *noMonedas);
-void pop(struct Monedero **ptrS, int moneda, int *noMonedas);
+// Regresa un 1 si se elimino la moneda y un 0 si no se elimino
+int pop(struct Monedero **ptrS, int moneda, int *noMonedas);
 void imprimirMonedero(struct Monedero *ptrS, int noMonedas);
 void vaciarMonedero(struct Monedero **ptrS, int *noMonedas);
 
@@ -49,7 +50,7 @@ void push(struct Monedero **ptrS, int moneda, int *noMonedas) {
     }
 }
 
-void pop(struct Monedero **ptrS, int moneda, int *noMonedas) {
+int pop(struct Monedero **ptrS, int moneda, int *noMonedas) {
     struct Monedero *ptrActual;
     struct Monedero *ptrAnterior;
     struct Monedero *ptrTemp;
@@ -61,8 +62,8 @@ void pop(struct Monedero **ptrS, int moneda, int *noMonedas) {
         free(ptrTemp);
 
         // Se quito una moneda
-        *noMonedas--;
-        return;
+        *noMonedas = *noMonedas - 1;
+        return 1;
     }
 
     ptrAnterior = *ptrS;
@@ -79,12 +80,13 @@ void pop(struct Monedero **ptrS, int moneda, int *noMonedas) {
         free(ptrTemp);
 
         // Se quito una moneda
-        *noMonedas--;
-        return;
+        *noMonedas = *noMonedas - 1;
+        return 1;
     }
 
     // Si la moneda no existe
     printf("\nNo tienes esa moneda \n");
+    return 0;
 }
 
 void imprimirMonedero(struct Monedero *ptrS, int noMonedas) {

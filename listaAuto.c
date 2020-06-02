@@ -201,9 +201,8 @@ void imprimirCabeza(struct Auto *ptrTalon, struct Auto *ptrCabeza) {
 }
 
 void recorrerAutosManualmete(struct Auto *ptr, int *tipo) {
-    system("clear");
     if(ptr != NULL) {
-        int opcion;
+        int opcion = 0;
 
         while(opcion != 3) {
             system("clear");

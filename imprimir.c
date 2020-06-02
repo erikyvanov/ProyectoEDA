@@ -19,6 +19,8 @@ void imprimirCamioneta();
 void imprimirAutobus();
 void imprimirCamion();
 
+void imprimirCobrar(int cantidad, int pagado);
+
 /*Funciones*/
 
 void imprimirTitulo(int tipoAuto) {
@@ -89,6 +91,23 @@ void imprimirAutobus() {
 }
 void imprimirCamion() {
     printf("\n _______________      ____   \n|         |     |    | |  \\  \n|_________|_____|____|_|___\\ \n|                    | |    \\\n`--(o)(o)--------------(o)--'\n");
+}
+
+void imprimirCobrar(int cantidad, int pagado) {
+    printf("  __________________________\n");
+    printf(" |                          |\n");
+    printf(" |   Cantidad a pagar: $%d", cantidad);
+    // Casos para que se imprima bien
+    if(cantidad < 10) {
+        printf(" ");
+    }
+    printf("  |\n");
+    printf(" |   Pagado: $%d", pagado);
+    if(cantidad < 10) {
+        printf(" ");
+    }
+    printf("            |\n");
+    printf(" |__________________________|\n\n");
 }
 
 #endif
