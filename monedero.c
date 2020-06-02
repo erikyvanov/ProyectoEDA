@@ -117,7 +117,6 @@ void imprimirMonedero(struct Monedero *ptrS, int noMonedas) {
 }
 
 void vaciarMonedero(struct Monedero **ptrS, int *noMonedas) {
-    printf("Vaciando monedero...\n");
     struct Monedero *actual;
 
     while(*ptrS != NULL) {

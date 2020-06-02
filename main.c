@@ -28,6 +28,7 @@ int main() {
 
     // Limpiar memoria
     vaciarMonedero(&usuario.monedero, &usuario.noMondedas);
+    printf("Vaciando monedero...\n");
     vaciarListaAutos(&autos.talon, &autos.cabeza);
 
     return 0;
