@@ -14,6 +14,7 @@ void irA(struct Usuario *u) {
     } else {
         int opcion = 0;
 
+        // La opcion 5 es regresar al menu principal
         while(opcion != 5) {
             imprimirMenuIrA();
             scanf("%d", &opcion);
